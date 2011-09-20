@@ -25,7 +25,8 @@ public class TCPServer
             for (int i = 0; i < k; i++)
                 Console.Write(Convert.ToChar(b[i]));
             ASCIIEncoding enc = new ASCIIEncoding();
-            s.Send(enc.GetBytes("Server responded"));
+            s.Send(b, k, 0);
+            s.Send(b, k, 0);
             Console.WriteLine("\nSent Response");
             s.Close();
         }
